@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 18
+    buildToolsVersion '23.0.3'
+
+    defaultConfig {
+        applicationId "com.bluemaestro.utility.demo"
+        minSdkVersion 18
+        targetSdkVersion 18
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'
+    compile group: 'net.sf.opencsv', name: 'opencsv', version: '2.3'
+}

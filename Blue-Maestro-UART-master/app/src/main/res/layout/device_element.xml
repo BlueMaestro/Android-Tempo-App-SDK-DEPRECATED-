@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2016, Blue Maestro
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~
+  ~ 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the
+  ~ documentation and/or other materials provided with the distribution.
+  ~
+  ~ 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this
+  ~ software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  ~ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  ~ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  ~ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+  ~ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  ~ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp" 
+    android:textColor="@color/black" >
+
+    <com.bluemaestro.utility.demo.views.generic.BMRelativeLayout
+        android:id="@+id/main_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone"
+            android:textSize="14dp" />
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:visibility="gone"
+            android:textSize="10dp" />
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/rssi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/address"
+            android:visibility="gone"
+            android:textSize="12dp"/>
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/paired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/paired"
+            android:visibility="gone"
+            android:textSize="12dp" />
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/paired"
+            android:visibility="gone"
+            android:textSize="12dp" />
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/temperature"
+            android:visibility="gone"
+            android:textSize="12dp" />
+
+        <com.bluemaestro.utility.demo.views.generic.BMTextView
+            android:id="@+id/dewPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/humidity"
+            android:visibility="gone"
+            android:textSize="12dp" />
+
+        <RelativeLayout
+            android:id="@+id/tables"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dewPoint">
+
+            <TableLayout
+                android:id="@+id/tableOverall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true">
+
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/highTemp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/highHumi"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/lowTemp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/lowHumi"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/table24Hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true">
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/high24Temp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/high24Humi"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/high24Dew"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/low24Temp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/low24Humi"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/low24Dew"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+                <TableRow>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/avg24Temp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/avg24Humi"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                        android:id="@+id/avg24Dew"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:textSize="8dp"/>
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/extras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tables">
+
+            <com.bluemaestro.utility.demo.views.generic.BMTextView
+                android:id="@+id/mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:visibility="gone"
+                android:textSize="10dp"/>
+
+            <com.bluemaestro.utility.demo.views.generic.BMTextView
+                android:id="@+id/numBreach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:visibility="gone"
+                android:textSize="10dp"/>
+        </RelativeLayout>
+    </com.bluemaestro.utility.demo.views.generic.BMRelativeLayout>
+</RelativeLayout>
