@@ -273,7 +273,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                 btnGraph.setEnabled(true);
                 lineChart.clear();
                 ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName() + " - ready");
-                listAdapter.add("[" + currentDateTimeString + "] Connected to: " + mDevice.getName());
+                listAdapter.add("Connected to: " + mDevice.getName());
                 messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                 mState = UART_PROFILE_CONNECTED;
             }
@@ -290,7 +290,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                 btnSend.setEnabled(false);
                 btnGraph.setEnabled(false);
                 ((TextView) findViewById(R.id.deviceName)).setText("Not Connected");
-                listAdapter.add("[" + currentDateTimeString + "] Disconnected from: " + mDevice.getName());
+                listAdapter.add("Disconnected from: " + mDevice.getName());
                 mState = UART_PROFILE_DISCONNECTED;
                 messageListView.setSelection(listAdapter.getCount() - 1);
                 mService.close();
@@ -308,7 +308,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                 try {
                     String text = new String(txValue, "UTF-8").trim();
                     String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                    listAdapter.add("[" + currentDateTimeString + "] RX: " + text);
+                    listAdapter.add("RX: " + text);
                     if (messageListView.getVisibility() == View.VISIBLE) {
                         messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                     } else {
@@ -378,7 +378,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
             mService.writeRXCharacteristic(value);
             // Update the log with time stamp
             String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-            listAdapter.add("[" + currentDateTimeString + "] TX: " + message);
+            listAdapter.add("TX: " + message);
             messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
             edtMessage.setText("");
 
