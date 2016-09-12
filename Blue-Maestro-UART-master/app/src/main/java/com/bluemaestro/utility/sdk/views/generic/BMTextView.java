@@ -20,21 +20,30 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.views.generic;
+package com.bluemaestro.utility.sdk.views.generic;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Garrett on 05/08/2016.
  */
-public class BMButton extends Button {
+public class BMTextView extends TextView {
 
-    public BMButton(Context context, AttributeSet attrs) {
+    public BMTextView(Context context){
+        super(context);
+        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
+        super.setTextColor(Color.BLACK);
+        super.setTypeface(font);
+    }
+
+    public BMTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
+        super.setTextColor(Color.BLACK);
         super.setTypeface(font);
     }
 }

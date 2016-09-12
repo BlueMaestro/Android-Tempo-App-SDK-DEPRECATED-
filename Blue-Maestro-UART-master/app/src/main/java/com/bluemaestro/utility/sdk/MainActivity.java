@@ -21,7 +21,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo;
+package com.bluemaestro.utility.sdk;
 
 
 
@@ -58,10 +58,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bluemaestro.utility.demo.devices.BMDevice;
-import com.bluemaestro.utility.demo.devices.BMDeviceMap;
-import com.bluemaestro.utility.demo.views.dialogs.BMAlertDialog;
-import com.bluemaestro.utility.demo.views.graphs.BMLineChart;
+import com.bluemaestro.utility.sdk.devices.BMDevice;
+import com.bluemaestro.utility.sdk.devices.BMDeviceMap;
+import com.bluemaestro.utility.sdk.views.dialogs.BMAlertDialog;
+import com.bluemaestro.utility.sdk.views.graphs.BMLineChart;
 
 public class MainActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
 

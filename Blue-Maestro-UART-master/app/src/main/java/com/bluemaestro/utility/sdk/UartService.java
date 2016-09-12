@@ -21,7 +21,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo;
+package com.bluemaestro.utility.sdk;
 
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
@@ -62,17 +62,17 @@ public class UartService extends Service {
     private static final int STATE_CONNECTED = 2;
 
     public static final String ACTION_GATT_CONNECTED =
-            "com.bluemaestro.utility.demo.ACTION_GATT_CONNECTED";
+            "com.bluemaestro.utility.sdk.ACTION_GATT_CONNECTED";
     public static final String ACTION_GATT_DISCONNECTED =
-            "com.bluemaestro.utility.demo.ACTION_GATT_DISCONNECTED";
+            "com.bluemaestro.utility.sdk.ACTION_GATT_DISCONNECTED";
     public static final String ACTION_GATT_SERVICES_DISCOVERED =
-            "com.bluemaestro.utility.demo.ACTION_GATT_SERVICES_DISCOVERED";
+            "com.bluemaestro.utility.sdk.ACTION_GATT_SERVICES_DISCOVERED";
     public static final String ACTION_DATA_AVAILABLE =
-            "com.bluemaestro.utility.demo.ACTION_DATA_AVAILABLE";
+            "com.bluemaestro.utility.sdk.ACTION_DATA_AVAILABLE";
     public static final String EXTRA_DATA =
-            "com.bluemaestro.utility.demo.EXTRA_DATA";
+            "com.bluemaestro.utility.sdk.EXTRA_DATA";
     public static final String DEVICE_DOES_NOT_SUPPORT_UART =
-            "com.bluemaestro.utility.demo.DEVICE_DOES_NOT_SUPPORT_UART";
+            "com.bluemaestro.utility.sdk.DEVICE_DOES_NOT_SUPPORT_UART";
     
     public static final UUID TX_POWER_UUID = UUID.fromString("00001804-0000-1000-8000-00805f9b34fb");
     public static final UUID TX_POWER_LEVEL_UUID = UUID.fromString("00002a07-0000-1000-8000-00805f9b34fb");

@@ -20,55 +20,50 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.devices;
-
-import android.bluetooth.BluetoothDevice;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.bluemaestro.utility.demo.R;
-import com.github.mikephil.charting.charts.Chart;
+package com.bluemaestro.utility.sdk.ble;
 
 /**
- * Created by Garrett on 05/08/2016.
- *
- * Blue Maesttro Tempo Disc T
+ * Created by Garrett on 24/08/2016.
  */
-public class BMTempoDiscT extends BMDevice {
+public final class Utility {
 
-    private double temperature;
-
-    public BMTempoDiscT(BluetoothDevice device, byte id) {
-        super(device, id);
-    }
-
-    @Override
-    public void updateWithData(int rssi, byte[] mData, byte[] sData){
-        super.updateWithData(rssi, mData, sData);
-        // Conversion from unsigned to signed, then dividing by 10.0 for degrees
-        temperature = convertToUInt16(mData[7], mData[6]) / 10.0;
-    }
-
-    @Override
-    public void setupChart(Chart chart, String command) {
+    private Utility(){
 
     }
 
-    @Override
-    public void updateChart(Chart chart, String text) {
-
+    public static final String bytesAsHexString(byte[] bytes){
+        StringBuilder stringBuilder = new StringBuilder(bytes.length);
+        for(byte byteChar : bytes)
+            stringBuilder.append(String.format("%02X", byteChar)).append(" ");
+        return stringBuilder.toString();
     }
 
-    public double getTemperature(){
-        return temperature;
+    public static final String convertValueTo(String value, String units){
+        if(value == null) return null;
+        float val = new Float(value);
+        switch(units.charAt(units.length() - 1)){
+            case 'C':
+                val = (val - 32) / 1.8f;
+                break;
+            case 'F':
+                val = val * 1.8f + 32;
+                break;
+            default:
+                break;
+        }
+        return String.format("%.1f", val);
     }
 
-    @Override
-    public void updateViewGroup(ViewGroup vg){
-        super.updateViewGroup(vg);
-        final TextView tvtemp = (TextView) vg.findViewById(R.id.temperature);
-        tvtemp.setVisibility(View.VISIBLE);
-        tvtemp.setText("Temperature = " + getTemperature() + "°C");
+    public static final String formatKey(String key){
+        key = key.trim();
+        key = key.replace("_", " ");
+        key = key.toLowerCase();
+        char[] array = key.toCharArray();
+        for(int i = 0; i < array.length - 1; i++){
+            if(array[i] == ' ' || array[i] == '°') array[i+1] = Character.toUpperCase(array[i+1]);
+        }
+        array[0] = Character.toUpperCase(array[0]);
+        return new String(array);
     }
+
 }

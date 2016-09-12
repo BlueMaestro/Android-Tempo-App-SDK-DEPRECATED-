@@ -20,30 +20,34 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.views.generic;
+package com.bluemaestro.utility.sdk.devices;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.util.AttributeSet;
-import android.widget.TextView;
+import android.bluetooth.BluetoothDevice;
+
+import com.github.mikephil.charting.charts.Chart;
 
 /**
- * Created by Garrett on 05/08/2016.
+ * Created by Garrett on 25/08/2016.
  */
-public class BMTextView extends TextView {
+public class BMDefaultDevice extends BMDevice {
 
-    public BMTextView(Context context){
-        super(context);
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
-        super.setTextColor(Color.BLACK);
-        super.setTypeface(font);
+    /**
+     * Constructor
+     *
+     * @param device  Bluetooth device
+     * @param version Version of this Blue Maestro device
+     */
+    public BMDefaultDevice(BluetoothDevice device, byte version) {
+        super(device, version);
     }
 
-    public BMTextView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
-        super.setTextColor(Color.BLACK);
-        super.setTypeface(font);
+    @Override
+    public void setupChart(Chart chart, String command) {
+
+    }
+
+    @Override
+    public void updateChart(Chart chart, String text) {
+
     }
 }

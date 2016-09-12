@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo;
+package com.bluemaestro.utility.sdk;
 
 import android.content.Context;
 import android.graphics.Typeface;

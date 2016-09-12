@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo;
+package com.bluemaestro.utility.sdk;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +53,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bluemaestro.utility.demo.ble.ScanRecordParser;
-import com.bluemaestro.utility.demo.devices.BMDevice;
-import com.bluemaestro.utility.demo.devices.BMDeviceMap;
+import com.bluemaestro.utility.sdk.ble.ScanRecordParser;
+import com.bluemaestro.utility.sdk.devices.BMDevice;
+import com.bluemaestro.utility.sdk.devices.BMDeviceMap;
 
 public class DeviceListActivity extends Activity {
 

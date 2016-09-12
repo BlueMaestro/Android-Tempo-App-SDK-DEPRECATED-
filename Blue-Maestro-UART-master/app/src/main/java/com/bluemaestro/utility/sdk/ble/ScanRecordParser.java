@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.ble;
+package com.bluemaestro.utility.sdk.ble;
 
 /**
  * Created by Garrett on 15/08/2016.

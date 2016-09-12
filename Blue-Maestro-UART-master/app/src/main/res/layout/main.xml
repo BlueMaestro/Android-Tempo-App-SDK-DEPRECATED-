@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <com.bluemaestro.utility.demo.views.generic.BMButton
+        <com.bluemaestro.utility.sdk.views.generic.BMButton
             android:id="@+id/btn_select"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             android:layout_weight="4.11"
             android:orientation="vertical" >
 
-            <com.bluemaestro.utility.demo.views.generic.BMEditText
+            <com.bluemaestro.utility.sdk.views.generic.BMEditText
                 android:id="@+id/sendText"
                 android:layout_width="102dp"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:maxLines="1"
                 android:shadowRadius="1" />
 
-            <com.bluemaestro.utility.demo.views.graphs.BMLineChart
+            <com.bluemaestro.utility.sdk.views.graphs.BMLineChart
                 android:id="@+id/lineChart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,7 +92,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true">
 
-                <com.bluemaestro.utility.demo.views.generic.BMButton
+                <com.bluemaestro.utility.sdk.views.generic.BMButton
                     android:id="@+id/sendButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                     android:enabled="false"
                     android:text="Send" />
 
-                <com.bluemaestro.utility.demo.views.generic.BMButton
+                <com.bluemaestro.utility.sdk.views.generic.BMButton
                     android:id="@+id/graphButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
         android:layout_marginTop="10dp"
         android:orientation="vertical" >
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/deviceLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
             android:layout_alignParentTop="true"
             android:text="@string/device" />
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/deviceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

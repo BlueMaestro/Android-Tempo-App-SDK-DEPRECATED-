@@ -27,12 +27,12 @@
     android:padding="6dp" 
     android:textColor="@color/black" >
 
-    <com.bluemaestro.utility.demo.views.generic.BMRelativeLayout
+    <com.bluemaestro.utility.sdk.views.generic.BMRelativeLayout
         android:id="@+id/main_information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:visibility="gone"
             android:textSize="14dp" />
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
             android:visibility="gone"
             android:textSize="10dp" />
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/rssi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             android:visibility="gone"
             android:textSize="12dp"/>
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/paired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
             android:visibility="gone"
             android:textSize="12dp" />
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             android:visibility="gone"
             android:textSize="12dp" />
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
             android:visibility="gone"
             android:textSize="12dp" />
 
-        <com.bluemaestro.utility.demo.views.generic.BMTextView
+        <com.bluemaestro.utility.sdk.views.generic.BMTextView
             android:id="@+id/dewPoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
                 android:layout_alignParentTop="true">
 
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/highTemp"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -117,7 +117,7 @@
                         android:textSize="8dp"/>
                 </TableRow>
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/highHumi"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -125,7 +125,7 @@
                         android:textSize="8dp"/>
                 </TableRow>
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/lowTemp"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -133,7 +133,7 @@
                         android:textSize="8dp"/>
                 </TableRow>
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/lowHumi"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -149,19 +149,19 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true">
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/high24Temp"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         android:textSize="8dp"/>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/high24Humi"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         android:textSize="8dp"/>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/high24Dew"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -169,19 +169,19 @@
                         android:textSize="8dp"/>
                 </TableRow>
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/low24Temp"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         android:textSize="8dp"/>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/low24Humi"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         android:textSize="8dp"/>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/low24Dew"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -189,19 +189,19 @@
                         android:textSize="8dp"/>
                 </TableRow>
                 <TableRow>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/avg24Temp"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         android:textSize="8dp"/>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/avg24Humi"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         android:textSize="8dp"/>
-                    <com.bluemaestro.utility.demo.views.generic.BMTextView
+                    <com.bluemaestro.utility.sdk.views.generic.BMTextView
                         android:id="@+id/avg24Dew"
                         android:layout_alignParentLeft="true"
                         android:paddingLeft="2dp"
@@ -217,7 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tables">
 
-            <com.bluemaestro.utility.demo.views.generic.BMTextView
+            <com.bluemaestro.utility.sdk.views.generic.BMTextView
                 android:id="@+id/mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -226,7 +226,7 @@
                 android:visibility="gone"
                 android:textSize="10dp"/>
 
-            <com.bluemaestro.utility.demo.views.generic.BMTextView
+            <com.bluemaestro.utility.sdk.views.generic.BMTextView
                 android:id="@+id/numBreach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -235,5 +235,5 @@
                 android:visibility="gone"
                 android:textSize="10dp"/>
         </RelativeLayout>
-    </com.bluemaestro.utility.demo.views.generic.BMRelativeLayout>
+    </com.bluemaestro.utility.sdk.views.generic.BMRelativeLayout>
 </RelativeLayout>

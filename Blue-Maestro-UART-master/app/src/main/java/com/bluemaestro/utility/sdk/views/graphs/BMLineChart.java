@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.views.graphs;
+package com.bluemaestro.utility.sdk.views.graphs;
 
 import android.content.Context;
 import android.graphics.Canvas;

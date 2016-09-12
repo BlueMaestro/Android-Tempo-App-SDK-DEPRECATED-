@@ -20,14 +20,14 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.devices;
+package com.bluemaestro.utility.sdk.devices;
 
 import android.bluetooth.BluetoothDevice;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bluemaestro.utility.demo.R;
+import com.bluemaestro.utility.sdk.R;
 import com.github.mikephil.charting.charts.Chart;
 /**
  * Created by Garrett on 05/08/2016.

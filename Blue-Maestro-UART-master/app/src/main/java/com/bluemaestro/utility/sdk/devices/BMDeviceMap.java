@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.devices;
+package com.bluemaestro.utility.sdk.devices;
 
 import android.bluetooth.BluetoothDevice;
 

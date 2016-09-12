@@ -20,19 +20,19 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.views.generic;
+package com.bluemaestro.utility.sdk.views.generic;
 
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.EditText;
+import android.widget.Button;
 
 /**
  * Created by Garrett on 05/08/2016.
  */
-public class BMEditText extends EditText {
+public class BMButton extends Button {
 
-    public BMEditText(Context context, AttributeSet attrs) {
+    public BMButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
         super.setTypeface(font);

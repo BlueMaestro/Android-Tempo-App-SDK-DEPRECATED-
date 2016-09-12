@@ -20,63 +20,55 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.devices;
+package com.bluemaestro.utility.sdk.devices;
 
 import android.bluetooth.BluetoothDevice;
-import android.graphics.Color;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.bluemaestro.utility.sdk.R;
 import com.github.mikephil.charting.charts.Chart;
-import com.github.mikephil.charting.data.Entry;
-import com.bluemaestro.utility.demo.views.graphs.BMLineChart;
-
-import java.util.regex.Pattern;
 
 /**
- * Created by Garrett on 15/08/2016.
+ * Created by Garrett on 05/08/2016.
+ *
+ * Blue Maesttro Tempo Disc T
  */
-public class BMShockLog extends BMDevice {
+public class BMTempoDiscT extends BMDevice {
 
-    public BMShockLog(BluetoothDevice device, byte id) {
+    private double temperature;
+
+    public BMTempoDiscT(BluetoothDevice device, byte id) {
         super(device, id);
     }
 
     @Override
     public void updateWithData(int rssi, byte[] mData, byte[] sData){
         super.updateWithData(rssi, mData, sData);
+        // Conversion from unsigned to signed, then dividing by 10.0 for degrees
+        temperature = convertToUInt16(mData[7], mData[6]) / 10.0;
     }
 
     @Override
-    public void setupChart(Chart chart, String command){
-        if(chart instanceof BMLineChart && command.equals("*bur")){
-            // If we sent the "*bur" command, setup the chart
-            BMLineChart lineChart = (BMLineChart) chart;
-            lineChart.init("", 24);
-            lineChart.setLabels(
-                    new String[]{"X", "Y", "Z"},
-                    new int[]{Color.RED, Color.BLUE, Color.BLACK}
-            );
-        }
+    public void setupChart(Chart chart, String command) {
+
     }
 
     @Override
-    public void updateChart(Chart chart, String text){
-        if(chart instanceof BMLineChart){
-            BMLineChart lineChart = (BMLineChart) chart;
-            // Only continue if it's XYZ values
-            String regex = "x:[0-9]* y:[0-9]* z:[0-9]*";
-            if(!Pattern.matches(regex, text)) return;
+    public void updateChart(Chart chart, String text) {
 
-            // Parse values
-            String[] element = text.split(" ");
-            int[] value = new int[element.length];
-            for(int i = 0; i < value.length; i++) {
-                value[i] = new Integer(element[i].split(":")[1].trim());
-            }
-            // Insert values as new entries
-            int index = lineChart.getEntryCount();
-            lineChart.addEntry("X", new Entry(index, value[0]));
-            lineChart.addEntry("Y", new Entry(index, value[1]));
-            lineChart.addEntry("Z", new Entry(index, value[2]));
-        }
+    }
+
+    public double getTemperature(){
+        return temperature;
+    }
+
+    @Override
+    public void updateViewGroup(ViewGroup vg){
+        super.updateViewGroup(vg);
+        final TextView tvtemp = (TextView) vg.findViewById(R.id.temperature);
+        tvtemp.setVisibility(View.VISIBLE);
+        tvtemp.setText("Temperature = " + getTemperature() + "°C");
     }
 }

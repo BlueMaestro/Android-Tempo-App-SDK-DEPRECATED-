@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.views.dialogs;
+package com.bluemaestro.utility.sdk.views.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -29,8 +29,8 @@ import android.content.DialogInterface;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.bluemaestro.utility.demo.StyleOverride;
-import com.bluemaestro.utility.demo.views.generic.BMTextView;
+import com.bluemaestro.utility.sdk.StyleOverride;
+import com.bluemaestro.utility.sdk.views.generic.BMTextView;
 
 /**
  * Created by Garrett on 18/08/2016.

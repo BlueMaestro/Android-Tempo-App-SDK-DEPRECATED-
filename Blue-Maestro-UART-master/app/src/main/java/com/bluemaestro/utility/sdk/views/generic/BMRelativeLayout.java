@@ -20,50 +20,18 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.ble;
+package com.bluemaestro.utility.sdk.views.generic;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.RelativeLayout;
 
 /**
- * Created by Garrett on 24/08/2016.
+ * Created by Garrett on 05/08/2016.
  */
-public final class Utility {
+public class BMRelativeLayout extends RelativeLayout {
 
-    private Utility(){
-
+    public BMRelativeLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
     }
-
-    public static final String bytesAsHexString(byte[] bytes){
-        StringBuilder stringBuilder = new StringBuilder(bytes.length);
-        for(byte byteChar : bytes)
-            stringBuilder.append(String.format("%02X", byteChar)).append(" ");
-        return stringBuilder.toString();
-    }
-
-    public static final String convertValueTo(String value, String units){
-        if(value == null) return null;
-        float val = new Float(value);
-        switch(units.charAt(units.length() - 1)){
-            case 'C':
-                val = (val - 32) / 1.8f;
-                break;
-            case 'F':
-                val = val * 1.8f + 32;
-                break;
-            default:
-                break;
-        }
-        return String.format("%.1f", val);
-    }
-
-    public static final String formatKey(String key){
-        key = key.trim();
-        key = key.replace("_", " ");
-        key = key.toLowerCase();
-        char[] array = key.toCharArray();
-        for(int i = 0; i < array.length - 1; i++){
-            if(array[i] == ' ' || array[i] == '°') array[i+1] = Character.toUpperCase(array[i+1]);
-        }
-        array[0] = Character.toUpperCase(array[0]);
-        return new String(array);
-    }
-
 }

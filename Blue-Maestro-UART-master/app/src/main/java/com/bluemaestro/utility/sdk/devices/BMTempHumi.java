@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.devices;
+package com.bluemaestro.utility.sdk.devices;
 
 import android.bluetooth.BluetoothDevice;
 import android.graphics.Color;
@@ -29,10 +29,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bluemaestro.utility.demo.R;
+import com.bluemaestro.utility.sdk.R;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.data.Entry;
-import com.bluemaestro.utility.demo.views.graphs.BMLineChart;
+import com.bluemaestro.utility.sdk.views.graphs.BMLineChart;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -20,34 +20,21 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.bluemaestro.utility.demo.devices;
+package com.bluemaestro.utility.sdk.views.generic;
 
-import android.bluetooth.BluetoothDevice;
-
-import com.github.mikephil.charting.charts.Chart;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.util.AttributeSet;
+import android.widget.EditText;
 
 /**
- * Created by Garrett on 25/08/2016.
+ * Created by Garrett on 05/08/2016.
  */
-public class BMDefaultDevice extends BMDevice {
+public class BMEditText extends EditText {
 
-    /**
-     * Constructor
-     *
-     * @param device  Bluetooth device
-     * @param version Version of this Blue Maestro device
-     */
-    public BMDefaultDevice(BluetoothDevice device, byte version) {
-        super(device, version);
-    }
-
-    @Override
-    public void setupChart(Chart chart, String command) {
-
-    }
-
-    @Override
-    public void updateChart(Chart chart, String text) {
-
+    public BMEditText(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
+        super.setTypeface(font);
     }
 }
