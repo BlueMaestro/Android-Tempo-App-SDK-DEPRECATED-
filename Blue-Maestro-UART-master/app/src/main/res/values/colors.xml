@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bm_white">#FFFFFF</color>
+    <color name="bm_black">#000000</color>
+    <color name="bm_main_color">#156F9B</color>
+    <color name="bm_tab_bar_color">#818282</color>
+    <color name="bm_command_color">#4AA02C</color>
+</resources>

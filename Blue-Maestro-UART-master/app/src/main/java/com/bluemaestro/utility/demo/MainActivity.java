@@ -29,6 +29,7 @@ package com.bluemaestro.utility.demo;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 
 import android.app.Activity;
@@ -48,6 +49,7 @@ import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -112,7 +114,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
             return;
         }
         messageListView = (ListView) findViewById(R.id.listMessage);
-        listAdapter = new ArrayAdapter<String>(this, R.layout.message_detail);
+        listAdapter = new CustomArrayAdapter<String>(this, R.layout.message_detail);
 
         messageListView.setAdapter(listAdapter);
         messageListView.setDivider(null);
@@ -274,6 +276,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                 lineChart.clear();
                 ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName() + " - ready");
                 listAdapter.add("Connected to: " + mDevice.getName());
+                listAdapter.notifyDataSetChanged();
                 messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                 mState = UART_PROFILE_CONNECTED;
             }
@@ -291,6 +294,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                 btnGraph.setEnabled(false);
                 ((TextView) findViewById(R.id.deviceName)).setText("Not Connected");
                 listAdapter.add("Disconnected from: " + mDevice.getName());
+                listAdapter.notifyDataSetChanged();
                 mState = UART_PROFILE_DISCONNECTED;
                 messageListView.setSelection(listAdapter.getCount() - 1);
                 mService.close();
@@ -308,7 +312,8 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                 try {
                     String text = new String(txValue, "UTF-8").trim();
                     String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                    listAdapter.add("RX: " + text);
+                    listAdapter.add(text);
+                    listAdapter.notifyDataSetChanged();
                     if (messageListView.getVisibility() == View.VISIBLE) {
                         messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                     } else {
@@ -378,7 +383,8 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
             mService.writeRXCharacteristic(value);
             // Update the log with time stamp
             String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-            listAdapter.add("TX: " + message);
+            listAdapter.add(message);
+            listAdapter.notifyDataSetChanged();
             messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
             edtMessage.setText("");
 
@@ -445,6 +451,28 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
 
+    }
+
+    private class CustomArrayAdapter<T> extends ArrayAdapter<T>{
+        private final Pattern pattern = Pattern.compile("\\*.*");
+
+        public CustomArrayAdapter(Context context, int resource) {
+            super(context, resource);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            TextView textView = (TextView) super.getView(position, convertView, parent);
+
+            CharSequence charSequence = textView.getText();
+            if(charSequence == null) return textView;
+            int color = getResources().getColor(
+                    pattern.matcher(charSequence).matches()
+                            ? R.color.bm_command_color
+                            : R.color.bm_black);
+            textView.setTextColor(color);
+            return textView;
+        }
     }
 
     /*private Handler mHandler = new Handler() {
