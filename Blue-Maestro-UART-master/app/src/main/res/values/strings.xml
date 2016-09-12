@@ -22,7 +22,7 @@
   -->
 <resources>
 
-    <string name="app_name">Blue Maestro Utility App</string>
+    <string name="app_name">Tempo Utility App SDK</string>
     <string name="connect_name">Connect to devices</string>
     <string name="history_name">Device databases</string>
     <string name="device">Device:</string>
