@@ -1,4 +1,4 @@
-# Tempo Disc Utility App SDK
+# Tempo Utility App SDK
 
 The SDK for connecting to Blue Maestro BLE devices via UART for Android. This allows users to send commands to the device and graph data, if possible for the device.
 
