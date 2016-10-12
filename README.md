@@ -24,10 +24,6 @@ This SDK allows users to send commands to the device and graph data, if possible
 
 `BMDevice.java` - An abstract class to inherit for Blue Maestro devices
 
-DISCLAIMER
-
-While this SDK has been tested and verified as working with Tempo Disc™ Bluetooth Low Energy products at the time of submission to this repository, Blue Maestro may not keep this SDK up to date nor does it accept any obligation to do so. Blue Maestro does not guarantee or warrant this SDK is fit for any intended purpose and accepts no liability as a result it is not.
-
 `BMDeviceMap.java` - This holds a map of IDs to custom device classes, and allows creation of these custom devices
 
 `BMDefaultDevice.java` - A class which discovered Blue Maestro devices will default to if a custom class has not been defined for it
@@ -55,9 +51,6 @@ While this SDK has been tested and verified as working with Tempo Disc™ Blueto
 `LimitZone.java` - This class allows defining of limit 'zones', as opposed to limit lines, for a line chart
 
 
-
-
-
 ### Compile
 
 The project can be compiled using Android Studio and Gradle
@@ -67,3 +60,8 @@ The project can be compiled using Android Studio and Gradle
 Version: 2.0.1
 
 Android: Version 4.3 or above
+
+
+DISCLAIMER
+
+While this SDK has been tested and verified as working with Tempo Disc™ Bluetooth Low Energy products at the time of submission to this repository, Blue Maestro may not keep this SDK up to date nor does it accept any obligation to do so. Blue Maestro does not guarantee or warrant this SDK is fit for any intended purpose and accepts no liability as a result it is not.
