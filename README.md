@@ -1,6 +1,8 @@
 # Tempo Utility App SDK
 
-The SDK for connecting to Blue Maestro BLE devices via UART for Android. This allows users to send commands to the device and graph data, if possible for the device.
+Welcome to Blue Maestro's Android SDK for the third generation of Tempo Disc™ Bluetooth Low Energy sensors and data loggers. Visit www.bluemaestro.com for the full range of Tempo Disc™ products. 
+
+This SDK allows users to send commands to the device and graph data, if possible for the device.
 
 ### Classes
 
@@ -21,6 +23,10 @@ The SDK for connecting to Blue Maestro BLE devices via UART for Android. This al
 #### Devices
 
 `BMDevice.java` - An abstract class to inherit for Blue Maestro devices
+
+DISCLAIMER
+
+While this SDK has been tested and verified as working with Tempo Disc™ Bluetooth Low Energy products at the time of submission to this repository, Blue Maestro may not keep this SDK up to date nor does it accept any obligation to do so. Blue Maestro does not guarantee or warrant this SDK is fit for any intended purpose and accepts no liability as a result it is not.
 
 `BMDeviceMap.java` - This holds a map of IDs to custom device classes, and allows creation of these custom devices
 
